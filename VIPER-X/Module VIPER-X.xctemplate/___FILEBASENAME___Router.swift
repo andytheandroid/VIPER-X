@@ -18,7 +18,7 @@ class ___VARIABLE_productName:identifier___Wireframe: ___VARIABLE_productName:id
     //If you dont want to pass data from a VIPER-X Module to another remove tha param data_to_pass from the function
     static func createModule(with data_to_pass:Int) -> UIViewController {
         let navController = ___VARIABLE_productName:identifier___storyboard.instantiateViewController(withIdentifier: "storyboard_id")
-        if let view = navController.childViewControllers.first as? ___VARIABLE_productName:identifier___ViewProtocol {
+        if let view = navController.children.first as? ___VARIABLE_productName:identifier___ViewProtocol {
 
         let interactor : ___VARIABLE_productName:identifier___InteractorInputProtocol & ___VARIABLE_productName:identifier___RemoteDataManagerOutputProtocol    =  ___VARIABLE_productName:identifier___Interactor()
         let router : ___VARIABLE_productName:identifier___WireframeProtocol =  ___VARIABLE_productName:identifier___Wireframe()
@@ -32,11 +32,11 @@ class ___VARIABLE_productName:identifier___Wireframe: ___VARIABLE_productName:id
 
             view.presenter = presenter
             presenter.view = view
-            presenter.router = wireFrame
+            presenter.wireFrame = router
             presenter.interactor = interactor
             interactor.presenter = presenter
-            interactor.remoteRequestHandler = remoteDataManager
-            remoteDataManager.remoteRequestOutputHandler = interactor
+            interactor.remoteDataManager = remoteDataManager
+            remoteDataManager.remoteRequestHandler = interactor
 		     return navController
 
 }

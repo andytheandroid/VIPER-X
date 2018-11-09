@@ -14,7 +14,7 @@ class ___VARIABLE_productName:identifier___Presenter: ___VARIABLE_productName:id
 
     var view: ___VARIABLE_productName:identifier___ViewProtocol?
     var interactor: ___VARIABLE_productName:identifier___InteractorInputProtocol?
-    var wireframe: ___VARIABLE_productName:identifier___WireframeProtocol?
+    var wireFrame: ___VARIABLE_productName:identifier___WireframeProtocol?
 
     
 
